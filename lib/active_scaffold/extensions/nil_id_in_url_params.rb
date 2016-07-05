@@ -1,4 +1,4 @@
-class ActionController::Routing::RouteSet
+class ActionDispatch::Routing::RouteSet
   def generate_with_nil_id_awareness(*args)
     args[0].delete(:id) if args[0][:id].nil?
     generate_without_nil_id_awareness(*args)
