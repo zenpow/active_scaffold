@@ -452,7 +452,7 @@ module ActiveScaffold
       options[:page] ||= 1
 
       find_options = finder_options(options)
-      query = beginning_of_chain.where(nil) # where(nil) is needed because we need a relation
+      query = beginning_of_chain.where(nil).distinct # where(nil) is needed because we need a relation
 
       # NOTE: we must use :include in the count query, because some conditions may reference other tables
       if options[:pagination] && options[:pagination] != :infinite
